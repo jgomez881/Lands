@@ -6,13 +6,14 @@
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     Title="Lands">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding Login}">
             <StackLayout 
             Padding="5">
                 
                 <Image
-                    Source="onu"
-                    WidthRequest="200">
+                    Source="http://comofuncionaque.com/wp-content/uploads/2015/10/logo-de-la-onu1.png"
+                    WidthRequest="190">
                 </Image>
                 <Grid 
                     Margin="10,0"
@@ -33,6 +34,7 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}"
                         Placeholder="Enter your email...">
                     </Entry>
 
@@ -47,11 +49,13 @@
                         Grid.Row="1"
                         Grid.Column="1"
                         IsPassword="True"
+                        Text="{Binding Password, Mode=TwoWay}"
                         Placeholder="Enter your password...">
                     </Entry>
 
                 </Grid>
                 <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
                     VerticalOptions="CenterAndExpand">
 
                 </ActivityIndicator>
@@ -68,6 +72,7 @@
                     </Label>
 
                     <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
                         HorizontalOptions="End">
                     </Switch>
                 </StackLayout>
@@ -86,6 +91,7 @@
                     <Button 
                         BackgroundColor="Navy"
                         BorderRadius="23"
+                        Command="{Binding LoginCommand}"
                         HeightRequest="46"
                         Text="Login"
                         HorizontalOptions="FillAndExpand"
@@ -105,18 +111,18 @@
                     Orientation="Horizontal"
                     VerticalOptions="EndAndExpand">
                     <Image 
-                            Source="facebook_"
-                            WidthRequest="100">
+                            Source="facebook_.png"
+                            WidthRequest="80">
                     </Image>
 
                     <Image 
-                            Source="twitter_"
-                            WidthRequest="100">
+                            Source="http://www.freepngimg.com/download/twitter/9-2-twitter-high-quality-png.png"
+                            WidthRequest="80">
                     </Image>
 
                     <Image 
-                        Source="instagram_logo"
-                        WidthRequest="100">
+                        Source="https://images.vexels.com/media/users/3/137380/isolated/preview/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo-by-vexels.png"
+                        WidthRequest="80">
                     </Image>
                 </StackLayout>
             </StackLayout>
